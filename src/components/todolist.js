@@ -1,22 +1,11 @@
-import React from 'react'
 import './todolist.css'
 
-function Todolist() {
-
-    const todoList=[
-        "learning the poems",
-        "reading sherlock holmes",
-        "creating my app",
-    ]
+function Todolist({listItem,i}) {
     return (
         <>
-        {
-    todoList.map((listItem,i)=>{
-return(
-    <div className='list-item'>{listItem}</div>
-)
-    })
-        }</>
+        <div className='list-item' key={i}>{listItem}</div>
+    
+       </>
     )
 }
 

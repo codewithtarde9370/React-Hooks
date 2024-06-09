@@ -64,3 +64,8 @@ border:1px solid #eb6788;
     -ms-transition: 0.7s;
     -o-transition: 0.7s;
 }
+.empty-msg{
+    font-size: 20px;
+    padding: 10px 20px;
+    font-weight: 500;
+}
