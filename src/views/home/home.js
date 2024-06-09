@@ -7,7 +7,7 @@ import toast, { Toaster } from 'react-hot-toast';
 function Home() {
   const [todoList, setTodoList] = useState([]);
   const [newTask, setNewTask] = useState("");
-
+const [category, setCategory] = useState("");
   return (
     <>
       <div className='app-container'>
@@ -30,6 +30,19 @@ function Home() {
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
           />
+            <select
+             className='category'
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}>
+              <option value="">Category</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Learning">Learning</option>
+              <option value="Grocery">Grocery</option>
+              <option value="Household">Household</option>
+              <option value="official">official</option>
+              <option value="Others">Others</option>
+            </select>
+
           <img
             src={AddBtn}
             className='add-btn'
