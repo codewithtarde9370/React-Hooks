@@ -48,11 +48,13 @@ const [category, setCategory] = useState("");
             className='add-btn'
             alt='submit btn'
             onClick={() => {
-             if (newTask==="")
-               {(toast.error("Task Cannot be Empty!"))}
+             if (newTask==="" || category==="")
+               {(toast.error("Task and category Cannot be Empty!"))}
+            
               else 
               { setTodoList([...todoList, newTask])  
               setNewTask("")
+              setCategory("")
               toast.success("Task added Succesfully!")}
             }}
           />

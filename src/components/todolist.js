@@ -1,6 +1,6 @@
 import './todolist.css'
 
-function Todolist({listItem,i}) {
+function Todolist({task,category,i}) {
     return (
         <>
         <div className='list-item' key={i}>{listItem}</div>
