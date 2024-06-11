@@ -1,4 +1,5 @@
 .list-item{
+    position: relative;
     border-radius: 10px;
     padding: 5px 10px;
     color: #f0295a;
@@ -10,4 +11,41 @@
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+}
+.list-item .cate{
+    position: absolute;
+    font-weight: 600;
+    font-size: 12px;
+    background-color: #f0295a;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 10px;
+    right: 50px;
+    bottom: 1px;
+}
+.del-img{
+    position: absolute;
+    right: 7px;
+    height: 24px;
+    bottom: 5px;
+    cursor: pointer;
+}
+.del-img:hover{
+    height: 25px;
+    animation: del-animation;
+    animation-duration: 0.5s;
+    -webkit-animation: del-animation;
+}
+
+/* @keyframes del-animation{
+    0%{transform:rotate(-25deg);}
+25%{ transform:rotate(-50deg); -webkit-transform:rotate(-50deg); -moz-transform:rotate(-50deg); -ms-transform:rotate(-50deg); -o-transform:rotate(0deg); }
+50%{ transform:rotate(25deg); -webkit-transform:rotate(25deg); -moz-transform:rotate(25deg); -ms-transform:rotate(25deg); -o-transform:rotate(25deg); }
+75%{ transform:rotate(0deg); -webkit-transform:rotate(0deg); -moz-transform:rotate(0deg); -ms-transform:rotate(0deg); -o-transform:rotate(0deg); }
+100%{transform:rotate(-25deg);}
+} */
+
+@keyframes del-animation{
+    0%{ transform: rotate(15deg) ; -webkit-transform: rotate(15deg) ; -moz-transform: rotate(15deg) ; -ms-transform: rotate(15deg) ; -o-transform: rotate(15deg) ; }
+    100%{ transform: rotate(-15deg) ; -webkit-transform: rotate(-15deg) ; -moz-transform: rotate(-15deg) ; -ms-transform: rotate(-15deg) ; -o-transform: rotate(-15deg) ; }
 }

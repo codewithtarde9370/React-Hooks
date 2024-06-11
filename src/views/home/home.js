@@ -1,13 +1,28 @@
 import AddBtn from './add-button.png';
 import './home.css';
 import Todo from './../../components/todolist';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 function Home() {
   const [todoList, setTodoList] = useState([]);
   const [newTask, setNewTask] = useState("");
 const [category, setCategory] = useState("");
+
+useEffect(()=>{
+  const savedTodoList=localStorage.getItem("todoList")
+
+  if (savedTodoList){
+    setTodoList(JSON.parse(savedTodoList))
+  }
+},[])
+
+useEffect(()=>{
+if (todoList.length === 0) return 
+
+localStorage.setItem("todoList",JSON.stringify(todoList))
+},[todoList])
+
   return (
     <>
       <div className='app-container'>
@@ -17,7 +32,12 @@ const [category, setCategory] = useState("");
           {todoList.length === 0 ? (
             <p className='empty-msg'>List is empty. Add a new task here.</p>
           ) : (
-            todoList.map((listItem, i) => <Todo key={i} listItem={listItem} />)
+            todoList.map((listItem, i) => {
+              const {task, category}=listItem;
+            return(
+            <>
+            <Todo key={i} task={task} category={category}/>
+            </>)})
           )}
         </div>
 
@@ -35,12 +55,16 @@ const [category, setCategory] = useState("");
               value={category}
               onChange={(e) => setCategory(e.target.value)}>
               <option value="">Category</option>
-              <option value="Shopping">Shopping</option>
-              <option value="Learning">Learning</option>
-              <option value="Grocery">Grocery</option>
-              <option value="Household">Household</option>
-              <option value="official">official</option>
-              <option value="Others">Others</option>
+              <option value="entertainment">entertainment</option>
+              <option value="learning">learning</option>
+              <option value="kitchen">kitchen</option>
+              <option value="home">home</option>
+              <option value="food">food</option>
+              <option value="office">office</option>
+              <option value="health">health</option>
+              <option value="personal">personal</option>
+              <option value="others">others</option>
+
             </select>
 
           <img
@@ -52,7 +76,7 @@ const [category, setCategory] = useState("");
                {(toast.error("Task and category Cannot be Empty!"))}
             
               else 
-              { setTodoList([...todoList, newTask])  
+              { setTodoList([...todoList, {task:newTask, category: category}])  
               setNewTask("")
               setCategory("")
               toast.success("Task added Succesfully!")}
