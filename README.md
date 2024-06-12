@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# TODO LIST
+ # To-Do Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple To-Do application built with React that allows users to add, categorize, and delete tasks. The application uses local storage to persist data across sessions and includes user notifications for interactions.
 
-## Available Scripts
+## Table of Contents
+- [Usage](#usage)
+- [Features](#features)
+- [Libraries and Tools](#libraries-and-tools)
+- [Components](#components)
+- [State Management](#state-management)
+- [User Notifications](#user-notifications)
+- [Acknowledgements](#acknowledgements)
 
-In the project directory, you can run:
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Open the application in your browser:
+    ```bash
+    http://localhost:3000
+    ```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Add a new task by typing in the task input field and selecting a category from the dropdown. Click the add button to save the task.
 
-### `npm test`
+3. View the list of tasks. Tasks are categorized and displayed accordingly.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+4. Delete a task by clicking the delete button next to the task. Confirm the deletion in the popup dialog.
 
-### `npm run build`
+## Features
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Add Task**: Add new tasks with categories.
+- **Delete Task**: Delete tasks with confirmation dialog.
+- **Persistent Storage**: Tasks are saved in local storage.
+- **User Notifications**: Notifications for actions like adding or deleting tasks.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Libraries and Tools
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Frontend
 
-### `npm run eject`
+- **React**: A JavaScript library for building user interfaces.
+- **React Hooks**: `useState` and `useEffect` for state management and side effects.
+- **SweetAlert2**: For elegant popup dialogs.
+- **React Hot Toast**: For toast notifications.
+- **CSS Modules**: For styling components.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Others
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Local Storage**: For persistent data storage in the browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Home Component
 
-## Learn More
+This is the main component of the application, responsible for rendering the UI and managing the state of the to-do list.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![todolist](./readme.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### State Management
+- **useState**: Used to manage the state of todoList, newTask, and category.
+- **useEffect**: Used to persist the to-do list to local storage and load it from local storage when the component mounts.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Acknowledgements
+- React
+- React Hot Toast
+- SweetAlert2
+- CSS Modules
+- Local Storage
