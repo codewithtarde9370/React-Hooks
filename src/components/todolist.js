@@ -1,7 +1,7 @@
 import './todolist.css'
 import delImg from "./delete.png"
 
-function Todo({deleteItem,task,category,i}) {
+function Todo({deleteItem,task,category,i,index}) {
     const EMOJI=
         {
          learning: "📚",
@@ -34,13 +34,14 @@ function Todo({deleteItem,task,category,i}) {
         <div
          className='list-item'
           key={i}
+          index={index}
           >
             <img 
             className='del-img'
              src={delImg} 
              alt='delete'
              onClick={()=>{
-                deleteItem
+                deleteItem(index)
              }}
              >
                 </img> 
