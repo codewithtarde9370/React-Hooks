@@ -1,7 +1,7 @@
 import './todolist.css'
 import delImg from "./delete.png"
 
-function Todo({task,category,i}) {
+function Todo({deleteItem,task,category,i}) {
     const EMOJI=
         {
          learning: "📚",
@@ -31,7 +31,26 @@ function Todo({task,category,i}) {
    
     return (
         <>
-        <div className='list-item' key={i}><img className='del-img' src={delImg} alt='delete'></img>  {task} <span className='cate' style={{backgroundColor:COLORS[category]}}>{EMOJI[category]} {category}</span></div>
+        <div
+         className='list-item'
+          key={i}
+          >
+            <img 
+            className='del-img'
+             src={delImg} 
+             alt='delete'
+             onClick={()=>{
+                deleteItem
+             }}
+             >
+                </img> 
+                 {task}
+              <span 
+              className='cate' 
+              style={{backgroundColor:COLORS[category]}}
+              > {EMOJI[category]} {category}
+              </span>
+              </div>
         
         
        </>

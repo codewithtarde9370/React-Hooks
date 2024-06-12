@@ -23,6 +23,18 @@ if (todoList.length === 0) return
 localStorage.setItem("todoList",JSON.stringify(todoList))
 },[todoList])
 
+function deleteItem(index){
+
+  const newTodoList = todoList.filter((item,i)=>{
+    if(i !== index){
+              return true;
+    }
+    else{
+      return false;
+    }
+  }) 
+}
+
   return (
     <>
       <div className='app-container'>
@@ -36,7 +48,7 @@ localStorage.setItem("todoList",JSON.stringify(todoList))
               const {task, category}=listItem;
             return(
             <>
-            <Todo key={i} task={task} category={category}/>
+            <Todo key={i} task={task} category={category} deleteItem={deleteItem}/>
             </>)})
           )}
         </div>
